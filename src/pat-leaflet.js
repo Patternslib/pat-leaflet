@@ -8,7 +8,6 @@ import { GeoSearchControl, EsriProvider, GoogleProvider, BingProvider, OpenStree
 import "leaflet.markercluster";
 import "leaflet.fullscreen";
 import "leaflet-providers";
-import "leaflet.awesome-markers";
 import "leaflet.locatecontrol";
 import "leaflet-minimap";
 import "leaflet-sleep";
@@ -179,9 +178,9 @@ export default Base.extend({
             });
             map.addControl(geosearch);
 
-            map.on('geosearch_showlocation', function (e) {
+            map.on('geosearch/showlocation', function (location, marker) {
                 if (main_marker && main_marker.feature.properties.editable) {
-                    var latlng = { lat: e.Location.Y, lng: e.Location.X };
+                    var latlng = { lat: location.Y, lng: location.X };
                     // update, otherwise screen is blank.
                     marker_cluster.removeLayer(main_marker);
                     main_marker.setLatLng(latlng).update();
@@ -189,8 +188,8 @@ export default Base.extend({
                     // fit to window
                     map.fitBounds([latlng], fitBoundsOptions);
                 } else {
-                    e.Marker.setIcon(this.create_marker('red'));
-                    this.bind_popup({ properties: { editable: true, popup: 'New Marker' } }, e.Marker).bind(this);
+                    marker.setIcon(this.create_icon('red'));
+                    this.bind_popup({ properties: { editable: true, popup: 'New Marker' } }, marker).bind(this);
                 }
             }.bind(this));
 
@@ -203,26 +202,17 @@ export default Base.extend({
             var addmarker = new L.Control.SimpleMarkers({
                 delete_control: false,
                 allow_popup: false,
-                marker_icon: this.create_marker('red'),
+                marker_icon: this.create_icon('red'),
                 marker_draggable: true,
                 add_marker_callback: add_marker_callback.bind(this)
             });
             map.addControl(addmarker);
         }
 
-        map.on('locationfound', function (e) {
-            if (main_marker && main_marker.feature.properties.editable) {
-                // update, otherwise screen is blank.
-                marker_cluster.removeLayer(main_marker);
-                main_marker.setLatLng({ lat: e.latlng.lat, lng: e.latlng.lng });
-                marker_cluster.addLayer(main_marker);
-            }
-            map.fitBounds([e.latlng], fitBoundsOptions);
-        });
-
         // Minimap
         if (options.minimap) {
-            var minimap = new L.Control.MiniMap(L.tileLayer.provider(options.default_map_layer.id, options.default_map_layer.options), { toggleDisplay: true, mapOptions: { sleep: false } }).addTo(map);
+            var minimap = new L.Control.MiniMap(L.tileLayer.provider(options.default_map_layer.id, options.default_map_layer.options), { toggleDisplay: true, mapOptions: { sleep: false } });
+            map.addControl(minimap);
         }
 
         log.debug('pattern initialized');
@@ -239,7 +229,7 @@ export default Base.extend({
                 } else if (!self.main_marker || feature.properties.main) {
                     markerColor = 'red';
                 }
-                var marker_icon = self.create_marker(markerColor, extraClasses);
+                var marker_icon = self.create_icon(markerColor, extraClasses);
                 var marker = L.marker(latlng, {
                     icon: marker_icon,
                     draggable: feature.properties.editable
@@ -317,15 +307,10 @@ export default Base.extend({
         }
     },
 
-    create_marker: function (color, extraClasses) {
+    create_icon: function (color, extraClasses) {
         color = color || 'red';
         extraClasses = extraClasses || '';
-        return L.AwesomeMarkers.icon({
-            markerColor: color,
-            prefix: 'fa',
-            icon: 'circle',
-            extraClasses: extraClasses
-        });
+        return L.Icon();
     }
 
 });
