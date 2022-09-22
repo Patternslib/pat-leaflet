@@ -1,13 +1,13 @@
 import $ from "jquery";
-import Base from "@patternslib/patternslib/core/base";
-import Parser from "@patternslib/patternslib/core/parser";
-import logging from "@patternslib/patternslib/core/logging";
+import Base from "@patternslib/patternslib/src/core/base";
+import Parser from "@patternslib/patternslib/src/core/parser";
+import logging from "@patternslib/patternslib/src/core/logging";
 import L from "leaflet";
+import { GeoSearchControl, EsriProvider, GoogleProvider, BingProvider, OpenStreetMapProvider } from "leaflet-geosearch";
 
 import "leaflet.markercluster";
 import "leaflet.fullscreen";
 import "leaflet-providers";
-import "leaflet-geosearch";
 import "leaflet.awesome-markers";
 import "leaflet.locatecontrol";
 import "leaflet-minimap";
@@ -17,7 +17,7 @@ import "leaflet-sleep";
 var log = logging.getLogger('pat-leaflet');
 log.debug('pattern loaded');
 
-var parser = new Parser('leaflet');
+export const parser = new Parser("leaflet");
 
 parser.addArgument('latitude', '0.0');
 parser.addArgument('longitude', '0.0');
@@ -48,20 +48,21 @@ parser.addArgument('map_layers', [
     { 'title': 'Toner', 'id': 'Stamen.Toner', 'options': {} }
 ]);
 
-parser.addArgument('image_path', 'src/bower_components/Leaflet.awesome-markers/dist/images');
+parser.addArgument('image_path', 'node_modules/leaflet.awesome-markers/dist/images');
 
 export default Base.extend({
     name: 'leaflet',
     trigger: '.pat-leaflet',
     map: undefined,
+    parser: parser,
 
-    init: async () => {
+    async init() {
         import("./pat-leaflet.scss");
 
         // BBB: remove jquery dependency in the future
         this.$el = $(this.el);
 
-        var options = this.options = parser.parse(this.$el);
+        var options = this.options = parser.parse(this.el);
 
         var fitBoundsOptions = this.fitBoundsOptions = {
             maxZoom: options.zoom,
@@ -161,22 +162,22 @@ export default Base.extend({
         if (options.geosearch) {
             var provider;
             if (options.geosearch_provider === 'esri') {
-                provider = new L.GeoSearch.Provider.Esri();
+                provider = new EsriProvider();
             } else if (options.geosearch_provider === 'google') {
-                provider = new L.GeoSearch.Provider.Google();
+                provider = new GoogleProvider();
             } else if (options.geosearch_provider === 'bing') {
-                provider = new L.GeoSearch.Provider.Bing();
+                provider = new BingProvider();
             } else {
-                provider = new L.GeoSearch.Provider.OpenStreetMap();
+                provider = new OpenStreetMapProvider();
             }
 
             // GEOSEARCH
-            geosearch = new L.Control.GeoSearch({
+            geosearch = new GeoSearchControl({
                 showMarker: typeof main_marker === 'undefined',
                 draggable: true,
                 provider: provider
             });
-            geosearch.addTo(map);
+            map.addControl(geosearch);
 
             map.on('geosearch_showlocation', function (e) {
                 if (main_marker && main_marker.feature.properties.editable) {
