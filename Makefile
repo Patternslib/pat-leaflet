@@ -8,21 +8,18 @@ all:: install serve
 
 designerhappy:: all
 
-install:: stamp-npm stamp-bower
+install:: stamp-npm
 
 serve::
 	$(HTTPSERVE) -p 4001
 
 clean::
-	rm -f stamp-npm stamp-bower
-	rm -rf node_modules src/bower_components ~/.cache/bower
+	rm -f stamp-npm
+	rm -rf node_modules
 
 stamp-npm: package.json
-	npm install
+	yarn install
 	touch stamp-npm
 
-stamp-bower: stamp-npm
-	$(BOWER) install
-	touch stamp-bower
 
 .PHONY: all clean designerhappy install serve stamp-bower stamp-npm
