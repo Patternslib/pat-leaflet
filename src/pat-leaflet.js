@@ -58,6 +58,9 @@ export default Base.extend({
     init: async () => {
         import("./pat-leaflet.scss");
 
+        // BBB: remove jquery dependency in the future
+        this.$el = $(this.el);
+
         var options = this.options = parser.parse(this.$el);
 
         var fitBoundsOptions = this.fitBoundsOptions = {
