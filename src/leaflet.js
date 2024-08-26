@@ -62,7 +62,7 @@ class Pattern extends BasePattern {
         await import("leaflet.awesome-markers");
         await import("leaflet.fullscreen");
 
-        const options = (this.options = parser.parse(this.el));
+        const options = this.options;
 
         const fitBoundsOptions = (this.fitBoundsOptions = {
             maxZoom: options.zoom,
