@@ -5,22 +5,22 @@
     "license": "MIT",
     "main": "./src/leaflet.js",
     "dependencies": {
-        "@patternslib/patternslib": ">=9.8.2",
+        "@patternslib/patternslib": ">=9.9.16",
         "fontawesome-free": "^1.0.4",
-        "jquery": "^3.6.4",
-        "leaflet": "^1.9.3",
-        "leaflet-geosearch": "^3.7.0",
+        "jquery": "^3.7.1",
+        "leaflet": "^1.9.4",
+        "leaflet-geosearch": "^4.0.0",
         "leaflet-minimap": "^3.6.1",
-        "leaflet-providers": "^1.13.0",
+        "leaflet-providers": "^2.0.0",
         "leaflet-sleep": "^0.5.2",
         "leaflet.awesome-markers": "^2.0.5",
-        "leaflet.fullscreen": "^2.4.0",
-        "leaflet.locatecontrol": "^0.79.0",
+        "leaflet.fullscreen": "^3.0.2",
+        "leaflet.locatecontrol": "^0.81.1",
         "leaflet.markercluster": "^1.5.3",
         "leaflet.simplemarkers": "git+https://github.com/jdomingu/Leaflet.SimpleMarkers.git"
     },
     "devDependencies": {
-        "@patternslib/dev": "^3.1.12"
+        "@patternslib/dev": "^3.6.1"
     },
     "scripts": {
         "start": "NODE_ENV=development webpack serve --config webpack.config.js",
