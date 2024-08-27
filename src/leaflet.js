@@ -38,7 +38,6 @@ parser.addArgument("map_layers", [
     { title: "Map", id: "OpenStreetMap.Mapnik", options: {} },
     { title: "Satellite", id: "Esri.WorldImagery", options: {} },
     { title: "Topographic", id: "OpenTopoMap", options: {} },
-    { title: "Toner", id: "Stamen.Toner", options: {} },
 ]);
 
 parser.addArgument("image_path", "node_modules/leaflet.awesome-markers/dist/images");
@@ -63,7 +62,7 @@ class Pattern extends BasePattern {
         await import("leaflet.awesome-markers");
         await import("leaflet.fullscreen");
 
-        const options = (this.options = parser.parse(this.el));
+        const options = this.options;
 
         const fitBoundsOptions = (this.fitBoundsOptions = {
             maxZoom: options.zoom,
