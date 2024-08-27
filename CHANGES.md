@@ -36,39 +36,6 @@
 
 * Use new style class options. ([a157701](https://github.com/patternslib/pat-leaflet/commit/a157701c67c07d1f7375b2fe74da4014c17d653a))
 
-## [2.2.0](https://github.com/patternslib/pat-leaflet/compare/2.1.1...2.2.0) (2024-08-27)
-
-
-### Features
-
-
-* Add option "useCluster" for switching marker cluster on or off. ([57d1242](https://github.com/patternslib/pat-leaflet/commit/57d124212504aee9e77399aaf361dcd0d0d514f7))
-
-
-
-### Bug Fixes
-
-
-* Stamen Toner has moved to Stadia Maps payed service. ([9849b14](https://github.com/patternslib/pat-leaflet/commit/9849b14c190f2f7b5f46cb30c8b22c19cec89aed))
-
-
-
-### Maintenance
-
-
-* dependency upgrades ([67e11f0](https://github.com/patternslib/pat-leaflet/commit/67e11f05f6e6f136bead72594ca9b591965882ee))
-
-
-* Explicitly set the module federation bundle name for clarity. ([2f18a99](https://github.com/patternslib/pat-leaflet/commit/2f18a996546e21f599af17f44fb4949aa3bbd40c))
-
-
-* Update documentation. ([24ac976](https://github.com/patternslib/pat-leaflet/commit/24ac976ce15f36d53f1e0d83bd54f90bd485e53c))
-
-
-* Upgrade dependencies. ([2aee74c](https://github.com/patternslib/pat-leaflet/commit/2aee74c5d22a1d114d4db2640362fe4f57b76e0d))
-
-
-* Use new style class options. ([a157701](https://github.com/patternslib/pat-leaflet/commit/a157701c67c07d1f7375b2fe74da4014c17d653a))
 
 ## [2.1.1](https://github.com/patternslib/pat-leaflet/compare/2.1.0...2.1.1) (2023-02-14)
 
