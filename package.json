@@ -1,6 +1,6 @@
 {
     "name": "@patternslib/pat-leaflet",
-    "version": "2.1.1",
+    "version": "2.2.0",
     "description": "Patternslib Leaflet integration",
     "license": "MIT",
     "main": "./src/leaflet.js",
