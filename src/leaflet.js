@@ -236,6 +236,15 @@ class Pattern extends BasePattern {
             map.addControl(minimap);
         }
 
+        // Refresh map data
+        $(this.el).on("leaflet.refresh", (e, geojson) => {
+            if ( typeof this.marker_cluster != "undefined" ) {
+                this.marker_cluster.clearLayers();
+            }
+            if (geojson) {
+                this.init_geojson(map, geojson);
+            }
+        });
         log.debug("pattern initialized");
     }
 
