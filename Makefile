@@ -18,13 +18,10 @@
 -include .env
 export
 
+YARN		?= npx yarn
 
-.PHONY: install
-stamp-yarn install:
-	npx yarn install
-	# Install pre commit hook
-	npx yarn husky install
-	touch stamp-yarn
+yarn.lock install:
+	$(YARN) install
 
 
 # Unlink any linked dependencies before building a bundle.
