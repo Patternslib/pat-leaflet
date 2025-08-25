@@ -123,7 +123,7 @@ class Pattern extends BasePattern {
                 // build layers object with tileLayer instances
                 baseLayers[layer.title] = this.L.tileLayer.provider(
                     layer.id,
-                    layer.options
+                    layer.options,
                 );
             }
             if (options.map_layers.length > 1) {
@@ -152,7 +152,7 @@ class Pattern extends BasePattern {
                 this.init_geojson(map, data);
             } catch {
                 log.info(
-                    `Could not load geojson data from url ${options.geojson_ajaxurl}`
+                    `Could not load geojson data from url ${options.geojson_ajaxurl}`,
                 );
                 return;
             }
@@ -198,7 +198,7 @@ class Pattern extends BasePattern {
                     e.marker.setIcon(this.create_marker("red"));
                     this.bind_popup(
                         { properties: { editable: true, popup: e.location.label } },
-                        e.marker
+                        e.marker,
                     );
                     this.marker_cluster.addLayer(e.marker);
                 }
@@ -229,9 +229,9 @@ class Pattern extends BasePattern {
             const minimap = new this.L.Control.MiniMap(
                 this.L.tileLayer.provider(
                     options.default_map_layer.id,
-                    options.default_map_layer.options
+                    options.default_map_layer.options,
                 ),
-                { toggleDisplay: true, mapOptions: { sleep: false } }
+                { toggleDisplay: true, mapOptions: { sleep: false } },
             );
             map.addControl(minimap);
         }
@@ -290,7 +290,7 @@ class Pattern extends BasePattern {
                             // fit bounds
                             bounds = this.marker_cluster.getBounds();
                             map.fitBounds(bounds, this.fitBoundsOptions);
-                        }
+                        },
                     );
                 }
                 if (input_lng) {
@@ -309,7 +309,7 @@ class Pattern extends BasePattern {
                             // fit bounds
                             bounds = this.marker_cluster.getBounds();
                             map.fitBounds(bounds, this.fitBoundsOptions);
-                        }
+                        },
                     );
                 }
                 return marker;

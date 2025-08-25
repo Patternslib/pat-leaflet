@@ -1,16 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>leaflet demo</title>
-    <script src="https://cdn.jsdelivr.net/npm/@patternslib/patternslib@9.8.2/dist/bundle.min.js"></script>
-    <script src="/remote.min.js"></script>
-  </head>
-  <body>
-
-    <h2>pat-leaflet demo - minimal</h2>
-    <section class="pat-clone-code">
-      <div id="map1" style="height:400px" class="pat-leaflet" data-pat-leaflet='
+    <head>
+        <meta charset="utf-8" />
+        <title>leaflet demo</title>
+        <script src="https://cdn.jsdelivr.net/npm/@patternslib/patternslib@9.8.2/dist/bundle.min.js"></script>
+        <script src="/remote.min.js"></script>
+    </head>
+    <body>
+        <h2>pat-leaflet demo - minimal</h2>
+        <section class="pat-clone-code">
+            <div
+                id="map1"
+                style="height: 400px"
+                class="pat-leaflet"
+                data-pat-leaflet='
       {
         "fullscreencontrol": false,
         "locatecontrol": false,
@@ -18,13 +21,17 @@
         "geosearch": true,
         "latitude": 47.33325135,
         "longitude": 9.645877746692685
-      }'></div>
-    </section>
+      }'
+            ></div>
+        </section>
 
-    <h2>pat-leaflet demo - full</h2>
-    <section class="pat-clone-code">
-      <div id="map2" style="height:400px" class="pat-leaflet"
-          data-pat-leaflet='{
+        <h2>pat-leaflet demo - full</h2>
+        <section class="pat-clone-code">
+            <div
+                id="map2"
+                style="height: 400px"
+                class="pat-leaflet"
+                data-pat-leaflet='{
 "fullscreencontrol": true,
 "locatecontrol": true,
 "zoomcontrol": true,
@@ -35,7 +42,7 @@
 "maxClusterRadius": 80,
 "useCluster": true
 }'
-        data-geojson='{
+                data-geojson='{
 "type": "FeatureCollection",
 "features": [
     {
@@ -85,10 +92,10 @@
             ]
         }
     }
-]}'></div>
-      <input type="text" name="latitude" value="55.69078" id="latinput"/>
-      <input type="text" name="longitude" value="12.55568" id="lnginput"/>
-    </section>
-
-  </body>
+]}'
+            ></div>
+            <input type="text" name="latitude" value="55.69078" id="latinput" />
+            <input type="text" name="longitude" value="12.55568" id="lnginput" />
+        </section>
+    </body>
 </html>

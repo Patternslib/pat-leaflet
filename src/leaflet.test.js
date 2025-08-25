@@ -73,7 +73,7 @@ describe("pat-leaflet", () => {
                             },
                         ],
                     }),
-            })
+            }),
         );
 
         document.body.innerHTML = `<div class="pat-leaflet" data-pat-leaflet='{
