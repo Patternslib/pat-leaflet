@@ -2,6 +2,45 @@
 
 
 
+## [2.2.1](https://github.com/patternslib/pat-leaflet/compare/2.2.0...2.2.1) (2025-08-25)
+
+
+### Bug Fixes
+
+
+* Correctly initialize leaflet.locatecontrol. ([23caf0c](https://github.com/patternslib/pat-leaflet/commit/23caf0cd1316ce19700d65c03e3617dda5c45bf1))
+
+
+* Demo: Do not use an outdated jsdelivr Patternslib host bundle. Just use the leaflet bundle, which includes all we need. This fixes a problem popping up with the registration of the obscure focus pattern in the Patternslib registry. ([335e829](https://github.com/patternslib/pat-leaflet/commit/335e82980b406c525b3995d684f197674d0d0922))
+
+
+* Fix eslint warnings. ([755808a](https://github.com/patternslib/pat-leaflet/commit/755808a6d02214a5ec6e340ee65573f28eee1f86))
+
+
+* Run prettier. ([bd08d34](https://github.com/patternslib/pat-leaflet/commit/bd08d345c98de4d120de490b01a76a02b0028b15))
+
+
+
+### Maintenance
+
+
+* @patternslib/dev upgrade - create eslint.config.js. ([937748e](https://github.com/patternslib/pat-leaflet/commit/937748e4d706f68f528a32aa42c62d19b37fb6f8))
+
+
+* @patternslib/dev upgrade - remove .husky directory in favor of git hooks. ([077d3af](https://github.com/patternslib/pat-leaflet/commit/077d3afc437f9746e51a8f5b6fbe3ed3e5236b68))
+
+
+* @patternslib/dev upgrade - remove old .eslintrc.js. ([2b638b6](https://github.com/patternslib/pat-leaflet/commit/2b638b6a2434147a60ef6c38f2def402854d8266))
+
+
+* Update GHA node version. ([f4c4c80](https://github.com/patternslib/pat-leaflet/commit/f4c4c800c844c35daf88a1b1274127da9129936e))
+
+
+* Update Makefile after upgrading @patternslib/dev. ([70dddad](https://github.com/patternslib/pat-leaflet/commit/70dddad0f5da28fb8c94c6bbab535a8041bf26f5))
+
+
+* Upgrade dependencies. ([9e25db4](https://github.com/patternslib/pat-leaflet/commit/9e25db4da08f8498e8c725374a8ca6b55781ba0e))
+
 ## [2.2.0](https://github.com/patternslib/pat-leaflet/compare/2.1.1...2.2.0) (2024-08-27)
 
 
