@@ -100,8 +100,9 @@ class Pattern extends BasePattern {
 
         // Locatecontrol
         if (options.locatecontrol || options.autolocate) {
-            await import("leaflet.locatecontrol");
-            const locatecontrol = this.L.control.locate().addTo(map);
+            const LocateControl = (await import("leaflet.locatecontrol")).LocateControl;
+            const locatecontrol = new LocateControl();
+            locatecontrol.addTo(map);
             if (options.autolocate) {
                 locatecontrol.start();
             }
