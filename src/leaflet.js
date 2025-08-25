@@ -150,7 +150,7 @@ class Pattern extends BasePattern {
                 response = await fetch(options.geojson_ajaxurl);
                 const data = await response.json();
                 this.init_geojson(map, data);
-            } catch (e) {
+            } catch {
                 log.info(
                     `Could not load geojson data from url ${options.geojson_ajaxurl}`
                 );
@@ -160,7 +160,7 @@ class Pattern extends BasePattern {
             try {
                 // inject inline geoJSON data object
                 this.init_geojson(map, JSON.parse(this.el.dataset.geojson));
-            } catch (e) {
+            } catch {
                 log.info("Could not parse geojson data.");
                 return;
             }
