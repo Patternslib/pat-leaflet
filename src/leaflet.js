@@ -114,29 +114,30 @@ class Pattern extends BasePattern {
             const baseLayers = {};
 
             // Convert map_layers elements from string to objects, if necesarry
-            options.map_layers = options.map_layers.map(function (it) {
+            const map_layers = options.map_layers.map(function (it) {
                 if (typeof it == "string") {
                     it = { id: it, title: it, options: {} };
                 }
                 return it;
             });
-            for (const layer of options.map_layers) {
+            for (const layer of map_layers) {
                 // build layers object with tileLayer instances
                 baseLayers[layer.title] = this.L.tileLayer.provider(
                     layer.id,
                     layer.options,
                 );
             }
-            if (options.map_layers.length > 1) {
+            if (map_layers.length > 1) {
                 this.L.control.layers(baseLayers).addTo(map);
             }
         }
 
-        if (typeof options.default_map_layer == "string") {
-            options.default_map_layer = { id: options.default_map_layer, options: {} };
+        let default_map_layer = options.default_map_layer;
+        if (typeof default_map_layer == "string") {
+            default_map_layer = { id: default_map_layer, options: {} };
         }
         this.L.tileLayer
-            .provider(options.default_map_layer.id, options.default_map_layer.options)
+            .provider(default_map_layer.id, default_map_layer.options)
             .addTo(map);
         if (options.zoom === "auto") {
             map.setView([options.latitude, options.longitude], 14);
@@ -229,8 +230,8 @@ class Pattern extends BasePattern {
             await import("leaflet-minimap");
             const minimap = new this.L.Control.MiniMap(
                 this.L.tileLayer.provider(
-                    options.default_map_layer.id,
-                    options.default_map_layer.options,
+                    default_map_layer.id,
+                    default_map_layer.options,
                 ),
                 { toggleDisplay: true, mapOptions: { sleep: false } },
             );
