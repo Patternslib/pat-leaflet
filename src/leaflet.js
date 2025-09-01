@@ -252,7 +252,7 @@ class Pattern extends BasePattern {
                 } else if (!this.main_marker || feature.properties.main) {
                     markerColor = "red";
                 }
-                const marker_icon = this.create_marker(markerColor, extraClasses);
+                const marker_icon = this.create_marker(markerColor, extraClasses, feature);
                 const marker = new this.L.Marker(latlng, {
                     icon: marker_icon,
                     draggable: feature.properties.editable,
@@ -351,9 +351,25 @@ class Pattern extends BasePattern {
         }
     }
 
-    create_marker(color, extraClasses) {
+    create_marker(color, extraClasses, feature) {
         color = color || "red";
         extraClasses = extraClasses || "";
+        if (feature?.properties?.icon_url) {
+            const icon = {
+                iconUrl: feature.properties.icon_url,
+                className: extraClasses,
+            }
+            if (feature.properties.icon_size) {
+                icon.iconSize = feature.properties.icon_size;
+            }
+            if (feature.properties.icon_anchor) {
+                icon.iconAnchor = feature.properties.icon_anchor;
+            }
+            if (feature.properties.popup_anchor) {
+                icon.popupAnchor = feature.properties.popup_anchor;
+            }
+            return this.L.icon(icon);
+        }
         return this.L.AwesomeMarkers.icon({
             markerColor: color,
             prefix: "fa",
