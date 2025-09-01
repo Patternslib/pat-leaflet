@@ -2,6 +2,24 @@
 
 
 
+## [2.2.2-alpha.0](https://github.com/patternslib/pat-leaflet/compare/2.2.1...2.2.2-alpha.0) (2025-09-01)
+
+
+### Features
+
+
+* Allow to pass a marker image url via the features properties data structure including icon size, icon anchor and popup anchor sizes. In that case, the marker will be created from that image url. ([a99987a](https://github.com/patternslib/pat-leaflet/commit/a99987a96db53c25370edc95a516d6b48016fa00))
+
+
+
+### Maintenance
+
+
+* Demo: Do a more minimal example for the minimal example. ([255ae60](https://github.com/patternslib/pat-leaflet/commit/255ae60041298143ba4e269e90deec820429a5b7))
+
+
+* Don't modify the original options object. ([ddde04f](https://github.com/patternslib/pat-leaflet/commit/ddde04f7b5e9d15677004da7261eabbb0353870a))
+
 ## [2.2.1](https://github.com/patternslib/pat-leaflet/compare/2.2.0...2.2.1) (2025-08-25)
 
 
