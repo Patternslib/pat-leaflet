@@ -4,6 +4,7 @@
     "description": "Patternslib Leaflet integration",
     "license": "MIT",
     "main": "./src/leaflet.js",
+    "packageManager": "pnpm@12.16.1",
     "dependencies": {
         "@patternslib/patternslib": ">=9.11.1",
         "fontawesome-free": "^1.0.4",
