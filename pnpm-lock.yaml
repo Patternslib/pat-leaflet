@@ -179,14 +179,14 @@ importers:
         specifier: ^1.9.4
         version: 1.9.4
       leaflet-geosearch:
-        specifier: ^4.2.0
-        version: 4.4.0
+        specifier: ^5.2.0
+        version: 5.2.0
       leaflet-minimap:
         specifier: ^3.6.1
         version: 3.6.1
       leaflet-providers:
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^4.0.0
+        version: 4.0.0
       leaflet-sleep:
         specifier: ^0.5.2
         version: 0.5.2
@@ -194,11 +194,11 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       leaflet.fullscreen:
-        specifier: ^4.0.0
-        version: 4.0.0
+        specifier: ^5.3.3
+        version: 5.3.3(leaflet@1.9.4)
       leaflet.locatecontrol:
-        specifier: ^0.84.2
-        version: 0.84.2
+        specifier: ^0.90.1
+        version: 0.90.1(leaflet@1.9.4)
       leaflet.markercluster:
         specifier: ^1.5.3
         version: 1.5.3(leaflet@1.9.4)
@@ -1055,8 +1055,8 @@ packages:
   '@fullcalendar/timegrid@5.11.5':
     resolution: {integrity: sha512-OEH5mrTclwxgUbb51N6qr7ifzNkR74ygUEFpiMLyyUjkp7a76N6BsAP5mBQnTOpTTUZBu9tAOmfcnvi7skUayQ==}
 
-  '@googlemaps/js-api-loader@1.16.10':
-    resolution: {integrity: sha512-c2erv2k7P2ilYzMmtYcMgAR21AULosQuUHJbStnrvRk2dG93k5cqptDrh9A8p+ZNlyhiqEOgHW7N9PAizdUM7Q==}
+  '@googlemaps/js-api-loader@2.1.3':
+    resolution: {integrity: sha512-1t6umwRufEGzIPjHPjPeuuY1dCal0zU2bZeomkf4OA0MprFdlKCnXY3zeFkzDaCvKjwbFubeapm61P5+EbrAoA==}
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -1804,6 +1804,9 @@ packages:
 
   '@types/gensync@1.0.5':
     resolution: {integrity: sha512-MbsRCT7mTikHwKZ0X+LVUTLRrZZRLipTuXEO9qOYO+zmjMVk81axyClMROf6uoPD9MRVu46bx8zoR0Ad9q3NAg==}
+
+  '@types/google.maps@3.66.9':
+    resolution: {integrity: sha512-6OmfZjuSMDG5oTzW6f2JM1by1rUrdCMBxtru2OJXfX44N3DqQSh8lEgwZbrHjoswYiapRf30vUCHjTs9sKDJdQ==}
 
   '@types/http-errors@2.0.5':
     resolution: {integrity: sha512-r8Tayk8HJnX0FztbZN7oVqGccWgw98T/0neJphO91KkmOzug1KkofZURD4UaD5uH8AqcFLfdPErnBod0u71/qg==}
@@ -3575,14 +3578,14 @@ packages:
   launch-editor@2.14.2:
     resolution: {integrity: sha512-NHJEb30MGBCkmZXLZwz25t37QR4aY03ZzPYUJXOJaOa92uWwExI9SBQUuIznBYc1xkD7cJNGX7oc3Nl3sq2kQQ==}
 
-  leaflet-geosearch@4.4.0:
-    resolution: {integrity: sha512-Pt/3JU0Oxvk+5ccGChNOV8yxk+Vl+3P83drGwW8/6ugF+K7zKPkx3naGDbPdhfeUmy+QuSCeVdvjN1jLCgwbaQ==}
+  leaflet-geosearch@5.2.0:
+    resolution: {integrity: sha512-odgQ0E9SmnCFGjvwOiZHzfqlQgo/A3mJ4f3zeT1RBrVBDAKwP3MYrNre3k9x4/m5yhFA8wNrRfVQ8mIMm9RrLg==}
 
   leaflet-minimap@3.6.1:
     resolution: {integrity: sha512-6px8f6cfv1rKB6ACpL6bbUFGxipZOq4KsntJgBj9nOcW1RYa5+xFp8emOZwks9X+VtVVsQEwWwfgT1kTTL/LzA==}
 
-  leaflet-providers@2.0.0:
-    resolution: {integrity: sha512-CWwKEnHd66Qsx0m4o5q5ZOa60s00B91pMxnlr4Y22msubfs7dhbZhdMIz8bvZQkrZqi67ppI1fsZRS6vtrLcOA==}
+  leaflet-providers@4.0.0:
+    resolution: {integrity: sha512-4m3Q4t0e+cHVNIPzlkW9HFWEgplImFRv8cnUFJYOfFoS6p2KosAfmh2Do6qk4HMdqutqbHMpv3F7sn/CUSw6oQ==}
 
   leaflet-sleep@0.5.2:
     resolution: {integrity: sha512-Los9EAa3PJi9syu9aX579U5YWv8ESl/OpzUv04wMgHiaUmmTRcUtcxrjCm0WgzvOBAN1cBV7gGw2zMgVzD0ZFg==}
@@ -3590,11 +3593,15 @@ packages:
   leaflet.awesome-markers@2.0.5:
     resolution: {integrity: sha512-Ne/xDjkGyaujwNVVkv2tyXQUV0ZW7gZ0Mo0FuQY4jp2qWrvXi0hwDBvmZyF/8YOvybyMabTMM/mFWCTd1jZIQA==}
 
-  leaflet.fullscreen@4.0.0:
-    resolution: {integrity: sha512-wIV7R6yxtlk95/Er31ptCL0MQCmG4OUU4U0SwNeamEb2xBNDIeU8GtWF2S7PaxV/fdfReNmp+QCT9cUPSNIgdw==}
+  leaflet.fullscreen@5.3.3:
+    resolution: {integrity: sha512-ejA/av8y2/pPHl7kPROQziWuoKXoycxyBiBR+vRucnp6CxlTpsSfrXxWuGyYdQICHHJxtMeJlrYp7fwMtNpRhQ==}
+    peerDependencies:
+      leaflet: ^1.7.0 || >=2.0.0-alpha.1
 
-  leaflet.locatecontrol@0.84.2:
-    resolution: {integrity: sha512-Tv0S2bAhpFgZYyyfPgeVhb3hPr9CnlcP15EpMQd9m5vA+aALhM6key1ucfnnD7n09AEeNEmIFe71T4V18Kpu7g==}
+  leaflet.locatecontrol@0.90.1:
+    resolution: {integrity: sha512-i8HsspXuYsjOTyDKQKyAgXKxIRjYeW/9FynXgYiVnVKH5mWojlJ1bF/S1S9Z++Qkl5cEKtba+kQdRLBP+HhPnQ==}
+    peerDependencies:
+      leaflet: ^1.9.0 || >=2.0.0-alpha.1
 
   leaflet.markercluster@1.5.3:
     resolution: {integrity: sha512-vPTw/Bndq7eQHjLBVlWpnGeLa3t+3zGiuM7fJwCkiMFq+nmRuG3RI3f7f4N4TDX7T4NpbAXpR2+NTRSEGfCSeA==}
@@ -6083,7 +6090,9 @@ snapshots:
       '@fullcalendar/daygrid': 5.11.5
       tslib: 2.9.1
 
-  '@googlemaps/js-api-loader@1.16.10':
+  '@googlemaps/js-api-loader@2.1.3':
+    dependencies:
+      '@types/google.maps': 3.66.9
     optional: true
 
   '@humanfs/core@0.19.2':
@@ -7098,6 +7107,8 @@ snapshots:
       '@types/serve-static': 2.2.0
 
   '@types/gensync@1.0.5': {}
+
+  '@types/google.maps@3.66.9': {}
 
   '@types/http-errors@2.0.5': {}
 
@@ -9020,22 +9031,28 @@ snapshots:
       picocolors: 1.1.1
       shell-quote: 1.12.0
 
-  leaflet-geosearch@4.4.0:
+  leaflet-geosearch@5.2.0:
+    dependencies:
+      '@types/google.maps': 3.66.9
     optionalDependencies:
-      '@googlemaps/js-api-loader': 1.16.10
+      '@googlemaps/js-api-loader': 2.1.3
       leaflet: 1.9.4
 
   leaflet-minimap@3.6.1: {}
 
-  leaflet-providers@2.0.0: {}
+  leaflet-providers@4.0.0: {}
 
   leaflet-sleep@0.5.2: {}
 
   leaflet.awesome-markers@2.0.5: {}
 
-  leaflet.fullscreen@4.0.0: {}
+  leaflet.fullscreen@5.3.3(leaflet@1.9.4):
+    dependencies:
+      leaflet: 1.9.4
 
-  leaflet.locatecontrol@0.84.2: {}
+  leaflet.locatecontrol@0.90.1(leaflet@1.9.4):
+    dependencies:
+      leaflet: 1.9.4
 
   leaflet.markercluster@1.5.3(leaflet@1.9.4):
     dependencies:
