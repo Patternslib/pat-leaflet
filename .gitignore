@@ -2,8 +2,6 @@
 .env
 dist/
 node_modules/
-stamp-yarn
 stats.json
-yarn-error.log
 pat-*
 .vscode
