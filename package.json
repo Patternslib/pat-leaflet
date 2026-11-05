@@ -5,7 +5,7 @@
     "license": "MIT",
     "main": "./src/leaflet.js",
     "dependencies": {
-        "@patternslib/patternslib": ">=9.10.3",
+        "@patternslib/patternslib": ">=9.11.1",
         "fontawesome-free": "^1.0.4",
         "jquery": "^3.7.1",
         "leaflet": "^1.9.4",
@@ -20,7 +20,7 @@
         "leaflet.simplemarkers": "git+https://github.com/jdomingu/Leaflet.SimpleMarkers.git"
     },
     "devDependencies": {
-        "@patternslib/dev": "^3.8.1"
+        "@patternslib/dev": "4"
     },
     "scripts": {
         "start": "NODE_ENV=development webpack serve --config webpack.config.js",
